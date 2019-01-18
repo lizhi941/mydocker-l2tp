@@ -1,0 +1,17 @@
+version: "2"
+services:
+
+   l2tp:
+     images: fcojean/l2tp-ipsec-vpn-server
+     env_file:
+      - ./etc/vpn.env
+     ports:
+      - 500:500/udp
+      - 4500:4500/udp
+     volumes:
+      - /lib/modules:/lib/modules:ro
+     privileged: true
+     restart: always
+     init: ./etc/docker-init.shell
+      
+     
