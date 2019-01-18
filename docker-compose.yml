@@ -12,6 +12,5 @@ services:
       - /lib/modules:/lib/modules:ro
      privileged: true
      restart: always
-     init: ./etc/docker-init.shell
       
      
